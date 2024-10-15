@@ -10,4 +10,9 @@
     <ProjectReference Include="..\TraceIP.Infraestructure\TraceIP.Infraestructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Entities\" />
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
 </Project>

@@ -11,4 +11,8 @@
     <ProjectReference Include="..\TraceIP.Infraestructure\TraceIP.Infraestructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
 </Project>
