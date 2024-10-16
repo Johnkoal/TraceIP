@@ -7,12 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TraceIP.Domain\TraceIP.Domain.csproj" />
-    <ProjectReference Include="..\TraceIP.Infraestructure\TraceIP.Infraestructure.csproj" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Repositories\" />
+    <ProjectReference Include="..\TraceIP.Domain\TraceIP.Domain.csproj" />
+    <ProjectReference Include="..\TraceIP.Infraestructure\TraceIP.Infraestructure.csproj" />
   </ItemGroup>
 
 </Project>
