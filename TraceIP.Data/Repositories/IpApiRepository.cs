@@ -4,6 +4,7 @@ using TraceIP.Data.Entities.IpApi;
 using TraceIP.Domain.Entities.IpApi;
 using TraceIP.Domain.Interfaces;
 using TraceIP.Infraestructure.AppSections;
+using TraceIP.Infraestructure.Exceptions;
 
 namespace TraceIP.Data.Repositories
 {
@@ -25,28 +26,25 @@ namespace TraceIP.Data.Repositories
                     HttpResponseMessage response = await client.GetAsync(url);
                     response.EnsureSuccessStatusCode();
                     string jsonResponse = await response.Content.ReadAsStringAsync();
-                    if (string.IsNullOrEmpty(jsonResponse))
-                        return null;
-
                     var result = JsonConvert.DeserializeObject<ApiResponse>(jsonResponse);
 
-                    var _language = string.Empty;
+                    var _languages = new List<string>();
                     foreach (var item in result.Location.Languages)
-                        _language += $"{item.Name} ({item.Code}) ";
+                        _languages.Add($"{item.Name} ({item.Code})");
 
                     return new Response()
                     {
                         CountryCode = result.Country_code,
                         Country = result.Country_name,
                         City = result.City,
-                        Language = _language,
+                        Languages = _languages,
                         Latitude = result.Latitude,
                         Longitude = result.Longitude
                     };
                 }
-                catch (HttpRequestException e)
+                catch (HttpRequestException ex)
                 {
-                    return null;
+                    throw new ExceptionExternalService("Error al consultar el servicio IpApi", ex);
                 }
             }
         }

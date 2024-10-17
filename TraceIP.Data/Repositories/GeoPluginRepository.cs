@@ -4,6 +4,7 @@ using TraceIP.Data.Entities.GeoPlugin;
 using TraceIP.Domain.Entities.GeoPlugin;
 using TraceIP.Domain.Interfaces;
 using TraceIP.Infraestructure.AppSections;
+using TraceIP.Infraestructure.Exceptions;
 
 namespace TraceIP.Data.Repositories
 {
@@ -25,10 +26,8 @@ namespace TraceIP.Data.Repositories
                     HttpResponseMessage response = await client.GetAsync(url);
                     response.EnsureSuccessStatusCode();
                     string jsonResponse = await response.Content.ReadAsStringAsync();
-                    if (string.IsNullOrEmpty(jsonResponse))
-                        return null;
-
                     var result = JsonConvert.DeserializeObject<ApiResponse>(jsonResponse);
+
                     return new Response()
                     {
                         CountryCode = result.Geoplugin_countryCode,
@@ -37,9 +36,9 @@ namespace TraceIP.Data.Repositories
                         Timezone = result.Geoplugin_timezone
                     };
                 }
-                catch (HttpRequestException e)
+                catch (HttpRequestException ex)
                 {
-                    return null;
+                    throw new ExceptionExternalService("Error al consultar el servicio GeoPlugin", ex);
                 }
             }
         }

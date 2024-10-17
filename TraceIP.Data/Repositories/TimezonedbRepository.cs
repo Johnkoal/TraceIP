@@ -4,6 +4,7 @@ using TraceIP.Data.Entities.Timezonedb;
 using TraceIP.Domain.Entities.Timezonedb;
 using TraceIP.Domain.Interfaces;
 using TraceIP.Infraestructure.AppSections;
+using TraceIP.Infraestructure.Exceptions;
 using Zone = TraceIP.Domain.Entities.Timezonedb.Zone;
 
 namespace TraceIP.Data.Repositories
@@ -26,9 +27,6 @@ namespace TraceIP.Data.Repositories
                     HttpResponseMessage response = await client.GetAsync(url);
                     response.EnsureSuccessStatusCode();
                     string jsonResponse = await response.Content.ReadAsStringAsync();
-                    if (string.IsNullOrEmpty(jsonResponse))
-                        return null;
-
                     var result = JsonConvert.DeserializeObject<ApiResponse>(jsonResponse);
                     var zones = new List<Zone>();
 
@@ -46,9 +44,9 @@ namespace TraceIP.Data.Repositories
 
                     return new Response() { Zones = zones };
                 }
-                catch (HttpRequestException e)
+                catch (HttpRequestException ex)
                 {
-                    return null;
+                    throw new ExceptionExternalService("Error al consultar el servicio Timezonedb", ex);
                 }
             }
         }

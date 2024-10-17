@@ -7,7 +7,7 @@
         public string City { get; set; }
         public Double Latitude { get; set; }
         public Double Longitude { get; set; }
-        public string Language { get; set; }
+        public List<string> Languages { get; set; }
 
     }
 }

@@ -10,6 +10,6 @@
         public string CurrencyCode { get; set; }
         public string Currency { get; set; }
         public string CountryTime { get; set; }
-        public string Distance { get; set; }
+        public string DistanceKms { get; set; }
     }
 }

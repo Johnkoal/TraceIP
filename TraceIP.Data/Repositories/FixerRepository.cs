@@ -4,6 +4,7 @@ using TraceIP.Data.Entities.Fixer;
 using TraceIP.Domain.Entities.Fixer;
 using TraceIP.Domain.Interfaces;
 using TraceIP.Infraestructure.AppSections;
+using TraceIP.Infraestructure.Exceptions;
 
 namespace TraceIP.Data.Repositories
 {
@@ -25,19 +26,17 @@ namespace TraceIP.Data.Repositories
                     HttpResponseMessage response = await client.GetAsync(url);
                     response.EnsureSuccessStatusCode();
                     string jsonResponse = await response.Content.ReadAsStringAsync();
-                    if (string.IsNullOrEmpty(jsonResponse))
-                        return null;
-
                     var result = JsonConvert.DeserializeObject<ApiResponse>(jsonResponse);
+
                     return new Response()
                     {
                         BaseCurrency = result.BaseCurrency,
                         Rates = result.Rates
                     };
                 }
-                catch (HttpRequestException e)
+                catch (HttpRequestException ex)
                 {
-                    return null;
+                    throw new ExceptionExternalService("Error al consultar el servicio Fixer", ex);
                 }
             }
         }
