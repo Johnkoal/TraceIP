@@ -9,8 +9,8 @@ services:
       - 8080:8080
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
-      - AppSettings__Latitude=-34.6037
-      - AppSettings__Longitude=-58.3816
+      - AppSettings__Latitude_Local=-34.6037
+      - AppSettings__Longitude_Local=-58.3816
       - ExternalServices__IpApi_Url=https://api.ipapi.com/api/
       - ExternalServices__IpApi_Key=1f429dda9ca25c3424d0b4e6414b3b93
       - ExternalServices__GeoPlugin_Url=http://www.geoplugin.net/json.gp
