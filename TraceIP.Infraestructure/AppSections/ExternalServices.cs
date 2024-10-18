@@ -5,7 +5,6 @@
         public string IpApi_Url { get; set; } = string.Empty;
         public string IpApi_Key { get; set; } = string.Empty;
         public string GeoPlugin_Url { get; set; } = string.Empty;
-        //public string GeoPlugin_Key { get; set; } = string.Empty;
         public string Fixer_Url { get; set; } = string.Empty;
         public string Fixer_Key { get; set; } = string.Empty;
         public string Timezonedb_Url { get; set; } = string.Empty;

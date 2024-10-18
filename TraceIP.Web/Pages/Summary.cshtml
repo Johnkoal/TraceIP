@@ -1,0 +1,64 @@
+﻿@page
+@model TraceIP.Web.Pages.SummaryModel
+@{
+    ViewData["Title"] = "Summary";
+}
+
+<h3>Resumen de IP's consultadas</h3>
+
+<div class="row mt-3">
+    <div class="col">
+        <span class="fw-bold">
+            @Html.DisplayNameFor(model => model.DetailModel.DistanceMax):
+        </span>
+        @Html.DisplayFor(model => model.DetailModel.DistanceMax)
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <span class="fw-bold">
+            @Html.DisplayNameFor(model => model.DetailModel.DistanceMin):
+        </span>
+        @Html.DisplayFor(model => model.DetailModel.DistanceMin)
+    </div>
+</div>
+<div class="row mb-4">
+    <div class="col">
+        <span class="fw-bold">
+            @Html.DisplayNameFor(model => model.DetailModel.DistanceAverage):
+        </span>
+        @Html.DisplayFor(model => model.DetailModel.DistanceAverage)
+    </div>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DetailItemsModel[0].Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DetailItemsModel[0].DistanceKms)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DetailItemsModel[0].Invocation)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.DetailItemsModel)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DistanceKms)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Invocation)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

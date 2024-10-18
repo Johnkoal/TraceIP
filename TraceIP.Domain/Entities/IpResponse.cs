@@ -5,6 +5,7 @@
         public string Ip { get; set; }
         public string CurrentDate { get; set; }
         public string Country { get; set; }
+        public string City { get; set; }
         public string IsoCode { get; set; }
         public string Language { get; set; }
         public string CurrencyCode { get; set; }

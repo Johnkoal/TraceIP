@@ -19,6 +19,9 @@ namespace TraceIP.Api.Entities
         [JsonPropertyName("country")]
         public string Country { get; set; }
 
+        [JsonPropertyName("city")]
+        public string City { get; set; }
+
         [JsonPropertyName("iso_code")]
         public string IsoCode { get; set; }
 

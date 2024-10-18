@@ -79,8 +79,8 @@ namespace TraceIP.Application.Services
 
             // Se calcula la distacia
             var disance = _haversineService.CalculateDistance(
-                _appSettings.Latitude,
-                _appSettings.Longitude,
+                _appSettings.Latitude_Local,
+                _appSettings.Longitude_Local,
                 _responseIpApi.Latitude,
                 _responseIpApi.Longitude);
 
@@ -89,12 +89,13 @@ namespace TraceIP.Application.Services
                 Ip = ip,
                 CountryTime = textTime.TrimEnd(' ', ','),
                 Country = _responseIpApi.Country,
+                City = _responseIpApi.City,
                 IsoCode = _responseIpApi.CountryCode,
                 Language = textlanguage.TrimEnd(' ', ','),
                 CurrencyCode = _responseCountry.CurrencyCode,
-                Currency = _responseFixer.Rates[_responseCountry.CurrencyCode].ToString(),
+                Currency = $"{_responseCountry.CurrencyCode} (1 {_responseCountry.CurrencyCode} = {Math.Round((1 / _responseFixer.Rates[_responseCountry.CurrencyCode]), 5)} EUR)",
                 CurrentDate = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss"),
-                DistanceKms = $"{disance.ToString()} kms de (Lat {(int)Math.Round(_responseIpApi.Latitude)} Lon {(int)Math.Round(_responseIpApi.Latitude)}) a (Lat {(int)Math.Round(_appSettings.Latitude)} Lon {(int)Math.Round(_appSettings.Longitude)})"
+                DistanceKms = $"{disance.ToString()} kms de (Lat {(int)Math.Round(_responseIpApi.Latitude)} Lon {(int)Math.Round(_responseIpApi.Latitude)}) a (Lat {(int)Math.Round(_appSettings.Latitude_Local)} Lon {(int)Math.Round(_appSettings.Longitude_Local)})"
             };
 
             // Se almacena el registro en la base

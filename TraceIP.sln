@@ -15,15 +15,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.Api", "5.Api", "{6FA12D13
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6.UI", "6.UI", "{F9807C1D-DE19-40BB-A762-E81C5FDE09E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceIP.Infraestructure", "TraceIP.Infraestructure\TraceIP.Infraestructure.csproj", "{83E9E28A-6621-4E4C-83D0-0668EFE7E7D4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TraceIP.Infraestructure", "TraceIP.Infraestructure\TraceIP.Infraestructure.csproj", "{83E9E28A-6621-4E4C-83D0-0668EFE7E7D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceIP.Domain", "TraceIP.Domain\TraceIP.Domain.csproj", "{F726E51D-D27A-41D7-9505-C44B147891C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TraceIP.Domain", "TraceIP.Domain\TraceIP.Domain.csproj", "{F726E51D-D27A-41D7-9505-C44B147891C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceIP.Data", "TraceIP.Data\TraceIP.Data.csproj", "{B794EBFB-4B52-4069-B981-6C62EA31786D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TraceIP.Data", "TraceIP.Data\TraceIP.Data.csproj", "{B794EBFB-4B52-4069-B981-6C62EA31786D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceIP.Application", "TraceIP.Application\TraceIP.Application.csproj", "{A2B8A559-296E-4F18-9EDE-95C03C7F016E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TraceIP.Application", "TraceIP.Application\TraceIP.Application.csproj", "{A2B8A559-296E-4F18-9EDE-95C03C7F016E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceIP.Api", "TraceIP.Api\TraceIP.Api.csproj", "{B0920C6B-ECFC-45B6-B0F2-E4CAAE07E3D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TraceIP.Api", "TraceIP.Api\TraceIP.Api.csproj", "{B0920C6B-ECFC-45B6-B0F2-E4CAAE07E3D7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.Deploy", "0.Deploy", "{A5A0B079-AD87-4AEE-A960-A788CCAE9E5E}"
+	ProjectSection(SolutionItems) = preProject
+		deploy.cmd = deploy.cmd
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraceIP.Web", "TraceIP.Web\TraceIP.Web.csproj", "{E1955D28-9E13-4E97-B9B7-8F18A6519156}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +59,10 @@ Global
 		{B0920C6B-ECFC-45B6-B0F2-E4CAAE07E3D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0920C6B-ECFC-45B6-B0F2-E4CAAE07E3D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0920C6B-ECFC-45B6-B0F2-E4CAAE07E3D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1955D28-9E13-4E97-B9B7-8F18A6519156}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1955D28-9E13-4E97-B9B7-8F18A6519156}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1955D28-9E13-4E97-B9B7-8F18A6519156}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1955D28-9E13-4E97-B9B7-8F18A6519156}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +73,7 @@ Global
 		{B794EBFB-4B52-4069-B981-6C62EA31786D} = {88E40F8C-11F3-4FD3-8FE1-4A840E9737AA}
 		{A2B8A559-296E-4F18-9EDE-95C03C7F016E} = {9FF29990-5D6F-4B89-B655-EDD23A7DE847}
 		{B0920C6B-ECFC-45B6-B0F2-E4CAAE07E3D7} = {6FA12D13-899F-4B7A-B7C7-A293893BB90D}
+		{E1955D28-9E13-4E97-B9B7-8F18A6519156} = {F9807C1D-DE19-40BB-A762-E81C5FDE09E3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {22C91A24-0790-411B-9739-5EAB75234284}

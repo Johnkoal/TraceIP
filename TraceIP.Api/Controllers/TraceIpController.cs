@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System.Text.RegularExpressions;
 using TraceIP.Api.Entities;
 using TraceIP.Domain.Interfaces;
@@ -38,7 +39,7 @@ namespace TraceIP.Api.Controllers
         public async Task<IActionResult> Get(string ip)
         {
             var _guid = Guid.NewGuid();
-            //_loggerService.Trace($"{_guid} - Request ip: {ip}");
+            _loggerService.Trace($"{_guid} - Request ip: {ip}");
             try
             {
                 // Se valida que la IP ingresada sea válida
@@ -48,24 +49,24 @@ namespace TraceIP.Api.Controllers
                     throw new ExceptionInfoRequire($"{ip} no es una dirección IP válida.");
 
                 var ipResponse = await _traceIpService.GetIp(ip);
-                return Ok();
-                //var traceIpResponse = new TraceIpResponse()
-                //{
-                //    MessageCode = 1,
-                //    Message = "Ejeccción exitosa",
-                //    Ip = ipResponse.Ip,
-                //    CurrentDate = ipResponse.CurrentDate,
-                //    Country = ipResponse.Country,
-                //    CountryTime = ipResponse.CountryTime,
-                //    Currency = ipResponse.Currency,
-                //    CurrencyCode = ipResponse.CurrencyCode,
-                //    DistanceKms = ipResponse.DistanceKms,
-                //    IsoCode = ipResponse.IsoCode,
-                //    Language = ipResponse.Language
-                //};
+                var traceIpResponse = new TraceIpResponse()
+                {
+                    MessageCode = 1,
+                    Message = "Ejeccción exitosa",
+                    Ip = ipResponse.Ip,
+                    CurrentDate = ipResponse.CurrentDate,
+                    Country = ipResponse.Country,
+                    City = ipResponse.City,
+                    CountryTime = ipResponse.CountryTime,
+                    Currency = ipResponse.Currency,
+                    CurrencyCode = ipResponse.CurrencyCode,
+                    DistanceKms = ipResponse.DistanceKms,
+                    IsoCode = ipResponse.IsoCode,
+                    Language = ipResponse.Language
+                };
 
-                //_loggerService.Trace($"{_guid} - Response: {JsonConvert.SerializeObject(traceIpResponse)}");
-                //return Ok(traceIpResponse);
+                _loggerService.Trace($"{_guid} - Response: {JsonConvert.SerializeObject(traceIpResponse)}");
+                return Ok(traceIpResponse);
             }
             catch (Exception ex)
             {

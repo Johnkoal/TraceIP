@@ -1,0 +1,31 @@
+version: "3.0"
+
+services:
+  traceip.api:
+    container_name: traceip.api
+    image: traceip.api:latest
+    restart: always
+    ports:
+      - 8080:8080
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - AppSettings__Latitude=-34.6037
+      - AppSettings__Longitude=-58.3816
+      - ExternalServices__IpApi_Url=https://api.ipapi.com/api/
+      - ExternalServices__IpApi_Key=1f429dda9ca25c3424d0b4e6414b3b93
+      - ExternalServices__GeoPlugin_Url=http://www.geoplugin.net/json.gp
+      - ExternalServices__Fixer_Url=http://data.fixer.io/api/latest
+      - ExternalServices__Fixer_Key=cbae3a7866686301668b09420a725ae9
+      - ExternalServices__Timezonedb_Url=https://api.timezonedb.com/v2.1/list-time-zone
+      - ExternalServices__Timezonedb_Key=P3B760D0U8LW
+  traceip.web:
+    container_name: traceip.web
+    image: traceip.web:latest
+    restart: always
+    ports:
+      - 8081:8080
+    depends_on:
+      - traceip.api
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - AppSettings__UrlApi=http://traceip.api:8080/api/
