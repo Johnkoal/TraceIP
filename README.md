@@ -108,6 +108,25 @@ Creado en .Net 8.0 - Microsoft Visual Studio Community 2022 (64-bit) (Version 17
 
    *Dockerfile* Archivo que permite la compilación y creación de la imagen de Docker para poder crear el contenedor del Api
 
+   **Endpoints**
+
+   El Api contiene 3 Endpoints, se detallan a continuación
+
+   ![image](https://github.com/user-attachments/assets/52abc2e2-466d-486c-b5ab-ee567b35b3ba)
+
+   *Consulta de IP* Es el servicio principal que recibe una IP y realiza la respectiva consulta en los servicios de los proveedores, también almacena el registro procesado
+
+   ![image](https://github.com/user-attachments/assets/44d9ca49-2897-4007-b22b-edd8d778371f)
+
+   *Consulta todos los registros* Retorna una lista de todas las consultas realizadas
+
+   ![image](https://github.com/user-attachments/assets/e08b2683-7496-4b79-a553-5205621ee3e2)
+
+   *Eliminación de registros* Si por motivos de pruebas es necesario hacer un Test en blanco, se puede ejecutar este servicio el cual eliminará todos los registros almacenados
+
+   ![image](https://github.com/user-attachments/assets/26dd9659-b312-4c27-aae1-61a1bbe0c911)
+
+
    **Capa de Presentación (UI)** Capa que accede al Api, no contiene lógica de negocio fuerte, pricipalmente permite la manipulación de los datos ingresados por el usuario y procesados por Api.
 
    ![image](https://github.com/user-attachments/assets/7659ede2-895a-4e41-bdf8-a6410b6c7521)
