@@ -23,7 +23,7 @@ builder.Services.AddSwaggerGen(x =>
     {
         Version = "v1",
         Title = "TraceIP.Api",
-        Description = "API que proporciona información de IP's"
+        Description = "API que proporciona informacion de IP's"
     });
     x.CustomSchemaIds(x => x.GetCustomAttributes<DisplayNameAttribute>().SingleOrDefault()?.DisplayName ?? x.FullName);
     var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
