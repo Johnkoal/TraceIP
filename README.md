@@ -22,7 +22,7 @@ Pasos para ejecutar el proyecto
 
    ![image](https://github.com/user-attachments/assets/9400df09-2a8b-4ea5-95f0-54965d0e9798)
 
-7. ejecutar el comando:  *docker-compose up -d*  para crear los contenedores, ya tiene la consifuración necesaria y debe aparecer algo así
+7. ejecutar el comando:  *docker-compose up -d*  para crear los contenedores, ya tiene la configuración necesaria y debe aparecer algo así
 
    ![image](https://github.com/user-attachments/assets/349eb97c-d7a6-4c68-a979-4a285c44b14e)
 
@@ -58,7 +58,24 @@ Información técnica
 
    ![image](https://github.com/user-attachments/assets/d93283ed-38f2-4284-90b0-0ae79149cb22)
 
+3. Explicación de cada capa
 
+   Infraestructura: Capa transversal que será vista por todas las capas superiores
+
+   ![image](https://github.com/user-attachments/assets/b1c98da4-d2c7-45e0-8259-9e49f3621e78)
+
+   **AppSections:** Clases personalizadas que acceden a las secciones del appsetings.json, y permiten ser inyectadas en las clases donde serán usadas
+
+   **Exceptions:** Sistema personalizado de excepciones que permite capturar y propagar a las capas superiores en donde hubo algún problema.
+
+   **Logger:** Capa personalizada para el uso de logs con la libraría Nlog
+
+   
+   
+5. sdf
+6. sdf
+7. sdf
+8. 
 
 
    
