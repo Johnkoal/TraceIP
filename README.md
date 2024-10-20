@@ -2,7 +2,7 @@
 
 Prueba Técnica Mercado Libre
 
-Creado en .Net 8.0 - Microsoft Visual Studio Community 2022 (64-bit) (Version 17.11.5)
+Creado en `.Net 8.0` - Microsoft Visual Studio Community `2022` (64-bit) (Version `17.11.5`)
 
 # **Pasos para ejecutar el proyecto**
 
@@ -157,7 +157,7 @@ Creado en .Net 8.0 - Microsoft Visual Studio Community 2022 (64-bit) (Version 17
 
   - `ASPNETCORE_ENVIRONMENT=Production`
   - `AppSettings__Latitude_Local=-34.6037` Latitud simulada de la ubicación del servidor, Buenos Aires como ejemplo
-  - `AppSettings__Longitude_Local=-58.3816`* Longitud simulada de la ubicación del servidor, Buenos Aires como ejemplo
+  - `AppSettings__Longitude_Local=-58.3816` Longitud simulada de la ubicación del servidor, Buenos Aires como ejemplo
   - `ExternalServices__IpApi_Url=https://api.ipapi.com/api/` Url del Api del proveedor https://ipapi.com/
   - `ExternalServices__IpApi_Key=1f429dda9ca25c3424d0b4e6414b3b93` Clave personal del proveedor https://ipapi.com/
   - `ExternalServices__GeoPlugin_Url=http://www.geoplugin.net/json.gp` Url del Api del proveedor http://www.geoplugin.net
