@@ -53,7 +53,7 @@ namespace TraceIP.Web.Pages
                 IPRequest.Language = ipResponse.Language;
                 IPRequest.Currency = ipResponse.Currency;
                 IPRequest.Country_date = ipResponse.Country_date;
-                IPRequest.Distance = $"{ipResponse.Distance} kms";
+                IPRequest.Distance = $"{ipResponse.Distance}";
 
                 return Page();
             }
