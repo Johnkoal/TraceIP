@@ -7,7 +7,7 @@ Creado en .Net 8.0 - Microsoft Visual Studio Community 2022 (64-bit) (Version 17
 # **Pasos para ejecutar el proyecto**
 
 1. Clonar el repoitorio en un directorio local
-2. Url del repositorio https://github.com/Johnkoal/TraceIP.git
+2. Url del repositorio `git clone https://github.com/Johnkoal/TraceIP.git`
    Debería descargar el siguiente contenido
    
    ![image](https://github.com/user-attachments/assets/8c17c838-8b91-4fb1-ad96-52d8aece663e)
@@ -18,11 +18,11 @@ Creado en .Net 8.0 - Microsoft Visual Studio Community 2022 (64-bit) (Version 17
 
    ![image](https://github.com/user-attachments/assets/6b087fc2-0ee7-4703-ac3c-ef6bb181d5ff)
 
-6. Ejecutar el archivo  *.\deploy.cmd*  para crear las imágenes de Docker (si está en windows, sino abrir el archivo y ejecutar cada línea manualmente)
+6. Ejecutar el archivo  `.\deploy.cmd`  para crear las imágenes de Docker (si está en windows, sino abrir el archivo y ejecutar cada línea manualmente)
 
    ![image](https://github.com/user-attachments/assets/9400df09-2a8b-4ea5-95f0-54965d0e9798)
 
-7. ejecutar el comando:  *docker-compose up -d*  para crear los contenedores, ya tiene la configuración necesaria y debe aparecer algo así
+7. ejecutar el comando:  `docker-compose up -d`  para crear los contenedores, ya tiene la configuración necesaria y debe aparecer algo así
 
    ![image](https://github.com/user-attachments/assets/349eb97c-d7a6-4c68-a979-4a285c44b14e)
 
@@ -141,13 +141,15 @@ Creado en .Net 8.0 - Microsoft Visual Studio Community 2022 (64-bit) (Version 17
 
    *deploy.cmd*  Archivo que contiene la información para la creación de las imágenes Docker y que permite ser ejecutado por una terminal directamente. Si se está en un sistema operativo Windows, de lo contrario debe ser compiada cada línea y ejecutada directmente un la terminal 
 
-   ![image](https://github.com/user-attachments/assets/e6a2d921-b023-48d2-8930-437196506638)
+   ![image](https://github.com/user-attachments/assets/51ec6792-1d92-49ea-a8c7-7972c249d794)
 
    *docker-compose.yml* Permite la creación de los contenedores
 
-   ![image](https://github.com/user-attachments/assets/51ec6792-1d92-49ea-a8c7-7972c249d794)
+   ![image](https://github.com/user-attachments/assets/e6a2d921-b023-48d2-8930-437196506638)
+   
 
-   Explicación de variables
+   **Explicación de variables**
+
    Los dos contenedores estarán expuestos al host, esto con el fin de que se puedean hacer pruebas individules tanto al Api como al Website
 
    Variables de entorno del Api
@@ -163,7 +165,7 @@ Creado en .Net 8.0 - Microsoft Visual Studio Community 2022 (64-bit) (Version 17
   - **ExternalServices__Timezonedb_Url=https://api.timezonedb.com/v2.1/list-time-zone** (Url del Api del proveedor https://timezonedb.com/)
   - **ExternalServices__Timezonedb_Key=P3B760D0U8LW** (Clave personal del proveedor https://timezonedb.com/)
 
-   Variables de entorno del
+   Variables de entorno del Website
 
   - **ASPNETCORE_ENVIRONMENT=Production**
   - **AppSettings__UrlApi=http://traceip.api:8080/api/** (Url del contenedor del Api, la comunicación se hace interna en la subred creada por Docker para el docker-compose)
