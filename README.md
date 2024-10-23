@@ -140,7 +140,7 @@ Creado en `.Net 8.0` - Microsoft Visual Studio Community `2022` (64-bit) (Versio
 
    **Deploy** Archivos para generación de imágenes Docker y creación de los contenedores
 
-   `deploy.cmd`  Archivo que contiene la información para la creación de las imágenes Docker y que permite ser ejecutado por una terminal directamente. Si se está en un sistema operativo Windows, de lo contrario debe ser compiada cada línea y ejecutada directmente un la terminal 
+   `deploy.cmd`  Archivo que contiene la información para la creación de las imágenes Docker y que permite ser ejecutado por una terminal directamente, si se está en un sistema operativo Windows, de lo contrario debe ser copiada cada línea y ejecutada directmente en una terminal 
 
    ![image](https://github.com/user-attachments/assets/51ec6792-1d92-49ea-a8c7-7972c249d794)
 
