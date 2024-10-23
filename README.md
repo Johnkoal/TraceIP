@@ -97,7 +97,7 @@ Creado en `.Net 8.0` - Microsoft Visual Studio Community `2022` (64-bit) (Versio
 
    `Services` Son los encargados de contener todo el código de negocio, quien consulta los repositorios, organiza la información y la entrega lista a la capa superior (Api o UI)
 
-   **Capa de Servicios** Capa que valida los datos que llegan y expone la información suministrada por la capa de negocio 
+   **Capa de Servicios (Api)** Capa que valida los datos que llegan y expone la información suministrada por la capa de negocio 
 
    ![image](https://github.com/user-attachments/assets/1b898a97-d7ff-4287-baf0-fb1944c6328f)
 
